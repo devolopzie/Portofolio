@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+      /* Animasi awal (hidden) */
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card img {
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Saat muncul */
+    .project-card.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* Navbar style */
+    .navbar-custom {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .navbar-custom.scrolled {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #333;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background: #0d6efd;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #0d6efd;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-contact {
+      background: linear-gradient(135deg, #0d6efd, #084298);
+      color: white;
+      border-radius: 25px;
+      padding: 6px 18px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Devhan</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#certi">Certificate</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="basketDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Memories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="basketDropdown">
+              <li><a class="dropdown-item" href="basket.html">Basket</a></li>
+              <li><a class="dropdown-item" href="#">Angkatan SMP</a></li>
+              <li><a class="dropdown-item" href="#">Picture Me</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="project.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-contact ms-3" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Projects -->
+  <div class="container py-5">
+    <h2 class="text-center mb-4">My Projects</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+          <img src="Kumpulan-Project/Screenshot (129).png" alt="Project 1">
+          <h5 class="mt-3 text-center">Tailwind & React</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+          <img src="Kumpulan-Project/Screenshot (15).png" alt="Project 2">
+          <h5 class="mt-3 text-center">Wordpress kelas 7</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal3">
+          <img src="Kumpulan-Project/Screenshot (215).png" alt="Project 3">
+          <h5 class="mt-3 text-center">CRUD Laravel kelas 9</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal4">
+          <img src="Kumpulan-Project/Screenshot (218).png" alt="Project 4">
+          <h5 class="mt-3 text-center">Laravel CRUD Admin Template</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal5">
+          <img src="Kumpulan-Project/Screenshot (292).png" alt="Project 5">
+          <h5 class="mt-3 text-center">Laravel CRUD UMKM Menu</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal6">
+          <img src="Kumpulan-Project/Screenshot (303).png" alt="Project 6">
+          <h5 class="mt-3 text-center">Project Team Event IDN</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal7">
+          <img src="Kumpulan-Project/Screenshot (437).png" alt="Project 7">
+          <h5 class="mt-3 text-center">Jam Masjid</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal8">
+          <img src="Kumpulan-Project/Screenshot (438).png" alt="Project 8">
+          <h5 class="mt-3 text-center">Modal-In HTML, CSS & JS</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal9">
+          <img src="Kumpulan-Project/Screenshot (439).png" alt="Project 9">
+          <h5 class="mt-3 text-center">Drum Kit</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal10">
+          <img src="Kumpulan-Project/Screenshot (440).png" alt="Project 10">
+          <h5 class="mt-3 text-center">Hidden-Search</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal11">
+          <img src="Kumpulan-Project/Screenshot (441).png" alt="Project 11">
+          <h5 class="mt-3 text-center">Scrolling-Text</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal12">
+          <img src="Kumpulan-Project/Screenshot (442).png" alt="Project 12">
+          <h5 class="mt-3 text-center">Slide-Image</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal13">
+          <img src="Kumpulan-Project/Screenshot (443).png" alt="Project 13">
+          <h5 class="mt-3 text-center">Split-Landing</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal14">
+          <img src="Kumpulan-Project/Screenshot (444).png" alt="Project 14">
+          <h5 class="mt-3 text-center">Sticky-Navbar</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal15">
+          <img src="Kumpulan-Project/folder.jpeg" alt="Project 15">
+          <h5 class="mt-3 text-center">
+            <a href="https://drive.google.com/drive/folders/187e4BtiG9jCgCol0G9-ZiEDkqiqDXCYJ?usp=sharing"
+              target="_blank" class="text-decoration-none">
+              Project Lengkap
+            </a>
+          </h5>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Efek navbar
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar-custom');
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    const cards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          entry.target.style.transitionDelay = `${index * 0.1}s`;
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+
+</html>
